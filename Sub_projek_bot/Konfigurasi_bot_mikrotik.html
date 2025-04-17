@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Muhammad Haviz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #14b8a6;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9fafb;
+      color: #333;
+    }
+
+    /* Navbar */
+    header {
+      background-color: #ffffff;
+      
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 95%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .left-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: bold;
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 20px;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    section {
+      padding: 6rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    /* Background gradient + image */
+    background:  url('mikrotik1.webp');
+
+    /* Posisi dan tampilan gambar */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 8rem 2rem 4rem;
+    }
+
+    .hero img {
+      width: 160px;
+      height: 160px;
+    
+      
+    }
+
+    .hero h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  z-index: 1;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Bayangan untuk keterbacaan */
+  animation: fadeInUp 0.8s ease;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 720px;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  color: #111827;
+  z-index: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  animation: fadeInUp 1s ease;
+}
+
+/* Animasi */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+    .about-grid {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      flex-wrap: wrap;
+   
+    }
+
+    .about-card, .about-text {
+      flex: 1 1 300px;
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .about-card i {
+      margin-right: 10px;
+      color: var(--primary);
+    }
+
+    h1, h2 {
+      color: #111827;
+    }
+
+    .projects div {
+      margin-bottom: 2rem;
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      
+    }
+
+    .projects h3 {
+      color: var(--primary);
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #f3f4f6;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        padding-top: 7rem;
+      }
+      .about-grid {
+        flex-direction: column;
+      }
+    }
+
+    .project-card {
+    background-color: #f9f9f9;
+    border-left: 4px solid #14b8a6;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #2c3e50;
+    }
+
+    .project-card h3 {
+    margin: 8;
+    }
+
+    .project-card h3 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+    cursor: pointer;
+    }
+
+    .project-card h3 a:hover {
+    color: #14b8a6; /* saat mouse hover */
+    text-decoration: underline;
+    }
+
+    .project-card h3 a:active {
+    color: #e74c3c; /* saat mouse diklik */
+    }
+
+    .project-card p {
+    margin: 5px 0;
+    }
+    .custom-video-frame {
+      
+      width: 100%;
+      max-width: 950px;
+      height: 500px; /* Ubah ini sesuai selera */
+      margin: 20px auto;
+      border-left: 4px solid #14b8a6;
+      
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      background-color: #000;
+    }
+
+    .custom-video-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="left-header">
+      <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+      <div class="logo">Otomasi MikroTik via Telegram — GNS3 | Python  </div>
+    </div>
+    <nav id="nav-menu">
+      <a href="#home">Beranda</a>
+      <a href="#about">Tentang Bot</a>
+      <a href="#projects_MikroTik">Projek MikroTik</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <p></p><p></p><p></p><p></p><p></p><p></p><p></p>
+      <h1>Otomasi  </h1>
+      <p>Oleh Muhammad Haviz</p>
+    </section>
+
+    <section id="about">
+      <h2>Tentang Bot MikroTik </h2>
+      <div class="about-grid">
+        <div class="about-text">
+            <style>
+              .about-text p {
+                text-align: justify;
+              }
+            </style>
+            <p>
+              Bot Telegram ini menyediakan tiga fitur utama untuk mempermudah pengelolaan perangkat MikroTik langsung dari Telegram. 
+              Pertama, <strong>Konfigurasi IP</strong> memungkinkan pengguna untuk mengatur, mengecek, dan menghapus alamat IP secara langsung melalui perintah chat. 
+              Kedua, <strong>Manajemen DHCP Server</strong> mendukung pengaturan, pemantauan, dan penghapusan konfigurasi DHCP seperti <em>pool</em>, <em>network</em>, <em>gateway</em>, dan <em>interface</em> dengan praktis. 
+              Ketiga, <strong>Manajemen Firewall</strong> memudahkan pengguna dalam menambah, mengecek, dan menghapus <em>rule firewall</em> tanpa perlu mengakses perangkat secara manual. 
+              Semua proses dilakukan secara <strong>instan</strong> dan <strong>efisien</strong> hanya melalui Telegram. 
+              Proyek ini dibangun menggunakan <em>Python</em> dengan integrasi <em>python-telegram-bot</em> dan <em>routeros_api</em> untuk memastikan pengelolaan jaringan yang efisien dan terstruktur serta menggunakan <em>GNS3</em> untuk melakukan pengetesan secara <em>real-time</em>.
+            </p>
+            
+            <p>
+              Untuk fitur <strong>Manajemen Firewall</strong>, bot menggunakan sistem <em>key</em> agar lebih fleksibel. 
+              Pengguna cukup mengirimkan <em>key</em> tertentu (seperti <em>chain</em>, <em>action</em>, <em>src-address</em>, dll) melalui Telegram, dan bot akan membaca serta memproses <em>key</em> tersebut sebagai variabel. 
+              Setelah itu, bot melakukan <em>parse</em> perintah berdasarkan <em>key</em> yang dimasukkan, mengirimkannya ke perangkat MikroTik, lalu mengembalikan hasilnya ke pengguna secara langsung melalui chat. 
+              Dengan sistem ini, pengguna dapat <strong>mengatur</strong>, <strong>mengecek</strong>, atau <strong>menghapus</strong> <em>rule firewall</em> dengan lebih dinamis dan tanpa perlu menyebutkan struktur perintah lengkap.
+            </p>
+            
+          </div>
+
+
+          <div class="about-card">
+            <h3><i class="fa fa-robot"></i> Fitur Bot Telegram MikroTik</h3>
+            <style>
+                .about-card p {
+                    text-align: justify;
+                }
+            </style>
+        
+              
+          <p><i class="fa fa-id-badge"></i> <strong>Identitas MikroTik:</strong></p>
+          <p>Melalui perintah <code>/set_nama</code>, pengguna dapat menyimpan nama atau identitas router agar lebih mudah dikenali, terutama saat mengelola banyak perangkat MikroTik.</p>
+      
+          <p><i class="fa fa-network-wired"></i> <strong> Konfigurasi IP:</strong></p>
+          <p>Bot dapat digunakan untuk mengatur, mengecek, dan menghapus alamat IP pada perangkat MikroTik. Perintah seperti <code>/set_ip</code>, <code>/cek_ip</code>, dan <code>/hapus_ip</code> memungkinkan pengguna melakukan konfigurasi IP langsung dari Telegram.</p>
+      
+          <p><i class="fa fa-server"></i> <strong> Manajemen DHCP Server:</strong></p>
+          <p>Bot menyediakan fitur untuk mengatur, mengecek, dan menghapus konfigurasi DHCP Server pada perangkat MikroTik. Ini mencakup pengelolaan DHCP pool, network, gateway, dan interface, yang bisa diakses melalui <code>/set_dhcp</code>, <code>/cek_dhcp</code>, dan <code>/hapus_dhcp</code>.</p>
+      
+          <p><i class="fa fa-random"></i> <strong> NAT Configuration:</strong></p>
+          <p>Fitur <code>/set_nat</code> digunakan untuk menambahkan rule NAT pada konfigurasi firewall MikroTik, misalnya untuk keperluan koneksi internet NAT masquerade.</p>
+      
+          <p><i class="fa fa-shield-alt"></i> <strong> Manajemen Firewall:</strong></p>
+          <p>Melalui <code>/set_filter_firewall</code>, <code>/list_filter_firewall</code>, dan <code>/hapus_filter_firewall</code>, pengguna dapat mengatur dan mengelola filter firewall. Bot mendukung penghapusan berdasarkan sistem key seperti <em>chain</em>, <em>action</em>, <em>comment</em>, <em>src-address</em>, dst., yang membuat pengelolaan firewall menjadi lebih cepat dan efisien.</p>
+      
+          <p><i class="fa fa-plug"></i> <strong> Koneksi MikroTik:</strong></p>
+          <p>Melalui perintah <code>/cek_koneksi_MikroTik</code>, pengguna dapat memverifikasi apakah bot berhasil terhubung dengan perangkat MikroTik secara real time.</p>
+      
+          <p><i class="fa fa-user-shield"></i> <strong> Keamanan Bot dan Autentikasi:</strong></p>
+          <p>Bot dilengkapi dengan sistem keamanan berbasis autentikasi pengguna. Hanya pengguna yang telah ditentukan sebelumnya dalam konfigurasi bot (file <code>.env</code>) yang bisa mengakses dan mengendalikan perangkat MikroTik, sehingga mencegah akses tidak sah.</p>
+      
+          <p><i class="fa fa-question-circle"></i> <strong> Bantuan Pengguna:</strong></p>
+          <p>Dengan perintah <code>/help</code>, pengguna dapat melihat semua daftar perintah yang tersedia lengkap dengan penjelasannya, sehingga mempermudah proses pembelajaran dan penggunaan fitur bot.</p>
+      </div>
+      
+        </div>
+        
+          
+        
+      </div>
+    </section>
+    
+    <section id="projects_MikroTik">
+      <h2>Projek MikroTik</h2>
+      <div class="projects">
+
+        <div class="project-card" style="text-align: justify" >
+            <h3>
+              
+                <i class="fa fa-cogs"></i>    Otomasi MikroTik via Bot Telegram — GNS3 | Python | JSON
+              
+            </h3>
+          
+            <p><i  class="fa fa-bolt"></i> <strong>Fitur :</strong> /set_ip, /cek_ip, /hapus_ip, /set_dhcp, /cek_dhcp, /hapus_dhcp, /set_firewall, /cek_firewall, /hapus_firewall, dan masih banyak lagi</p>
+            <p><i class="fa fa-code"></i> <strong>Stack:</strong> Python, Telegram Bot API, RouterOS API</p>
+            <p><i class="fa fa-calendar"></i> <strong>Tahun:</strong> 2025</p>
+            <p><i class="fa fa-info-circle"></i> Bot ini dibuat untuk mengotomasi konfigurasi router MikroTik langsung dari Telegram secara efisien. Terintegrasi dengan GNS3 untuk simulasi jaringan.</p>
+          </div>
+          
+
+        <div class="project-card" style="text-align: justify">
+            <h3><i class="fa fa-project-diagram"></i> Diagram Alir Bot MikroTik</h3>
+          
+            <p>Diagram berikut menggambarkan alur komunikasi antara <strong>User → Telegram Bot → MikroTik</strong>. 
+            Setiap perintah yang dikirimkan oleh user akan diproses oleh bot, dieksekusi ke MikroTik, lalu respon dikembalikan ke user.</p>
+          
+            <div style="text-align: center; margin-top: 10px;">
+              <img src="Flowchart.drawio (1).png" alt="diagram alir" style="max-width: 80%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
+              <p style="font-size: 0.9em; color: #555;">Gambar: Flowchart proses kerja bot Telegram dan MikroTik</p>
+            </div>
+          </div>
+   
+        <div class="project-card" style="text-align: justify">
+          <h3>
+              <i class="fa fa-network-wired"></i> Topologi Jaringan
+
+          </h3>
+          
+          <div style="text-align: center; margin-top: 10px;">
+            <img src="topologi2.png" alt="diagram alir" style="max-width: 80%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
+            <p style="font-size: 0.9em; color: #555;">Gambar: Topologi Jaringan MikroTik di GNS3  </p>
+          </div>
+            
+          <p>
+            <i class="fa fa-info-circle"></i> <strong>Topologi:</strong>
+            Jaringan hanya terdiri dari satu router MikroTik dan beberapa klien (client).
+            Konfigurasi dilakukan secara fleksibel menggunakan Bot Telegram tanpa perlu akses ke laptop atau komputer.
+        </p>
+    
+        <p>
+            <i class="fa fa-wifi"></i> <strong>Koneksi Internet:</strong>
+            Router MikroTik mendapatkan akses internet dari WiFi melalui port <code>ether1</code> dan menyalurkan koneksi internet ke klien melalui port <code>ether2</code>.
+        </p>
+    
+        <p>
+            <i class="fa fa-tools"></i> <strong>Konfigurasi Cepat dan Lengkap:</strong>
+            Dengan memanfaatkan fitur-fitur yang disediakan Bot Telegram, pengguna dapat mengatur IP, DHCP Server, NAT, Firewall, dan identitas router dengan mudah — cukup dari ponsel.
+            Ini sangat membantu jika tidak tersedia perangkat desktop untuk melakukan pengaturan jaringan.
+        </p>
+    </div>
+        
+        
+        <div class="custom-video-frame">
+          <h3>
+              <i class="fa fa-check-circle"></i> Video Bot Telegram MikroTik
+         </h3>
+          <p><em>Demo nyata penggunaan bot untuk konfigurasi MikroTik secara massal.</em></p>
+  
+          <div style="display: flex; justify-content: center;  height: 100%;">
+            <div style="position: relative; width: 60%; padding-bottom: 33.75%; height: 0; overflow: hidden;">
+              <iframe 
+                src="https://www.youtube.com/embed/ZRTMT8yTcvY" 
+                title="YouTube video player"
+                frameborder="0" 
+                allowfullscreen
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+              </iframe>
+            </div>
+          </div>
+    
+        
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><i class="fa fa-envelope"></i> haviz.ori@gmail.com</p>
+      <p><i class="fa fa-phone"></i> 085272922550</p>
+      <p><i class="fa fa-map-marker-alt"></i> JL. Soebrantas Panam, Pekanbaru</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Muhammad Haviz. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

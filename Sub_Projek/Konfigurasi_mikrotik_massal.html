@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Muhammad Haviz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #14b8a6;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9fafb;
+      color: #333;
+    }
+
+    /* Navbar */
+    header {
+      background-color: #ffffff;
+      
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 95%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .left-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: bold;
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 20px;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    section {
+      padding: 6rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    /* Background gradient + image */
+    background:  url('mikrotik.webp');
+    
+
+    /* Posisi dan tampilan gambar */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 8rem 2rem 4rem;
+    }
+
+    .hero img {
+      width: 160px;
+      height: 160px;
+    
+      
+    }
+
+    .hero h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  z-index: 1;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Bayangan untuk keterbacaan */
+  animation: fadeInUp 0.8s ease;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 720px;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  color: #111827;
+  z-index: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  animation: fadeInUp 1s ease;
+}
+
+/* Animasi */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    .about-grid {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .about-card, .about-text {
+      flex: 1 1 300px;
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .about-card i {
+      margin-right: 10px;
+      color: var(--primary);
+    }
+
+    h1, h2 {
+      color: #111827;
+    }
+
+    .projects div {
+      margin-bottom: 2rem;
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      
+    }
+
+    .projects h3 {
+      color: var(--primary);
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #f3f4f6;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        padding-top: 7rem;
+      }
+      .about-grid {
+        flex-direction: column;
+      }
+    }
+
+    .project-card {
+    background-color: #f9f9f9;
+    border-left: 4px solid #14b8a6;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #2c3e50;
+    }
+
+    .project-card h3 {
+    margin: 8;
+    }
+
+    .project-card h3 a {
+    text-decoration: none;
+    color: #2c3e50;
+    transition: color 0.2s ease;
+    cursor: pointer;
+    }
+
+    
+    .project-card p {
+    margin: 5px 0;
+    }
+      .custom-video-frame {
+      
+      width: 100%;
+      max-width: 950px;
+      height: 500px; /* Ubah ini sesuai selera */
+      margin: 20px auto;
+      border-left: 4px solid #14b8a6;
+      
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      background-color: #000;
+    }
+
+    .custom-video-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="left-header">
+      <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+      <div class="logo">Otomasi Massal MikroTik via Telegram — GNS3 | Python | JSON </div>
+    </div>
+    <nav id="nav-menu">
+      <a href="#home">Beranda</a>
+      <a href="#about">Tentang Bot</a>
+      <a href="#projects_MikroTik">Projek MikroTik</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <p></p><p></p><p></p><p></p><p></p><p></p><p></p>
+      <h1>Otomasi Massal </h1>
+      <p>Oleh Muhammad Haviz</p>
+    </section>
+
+    <section id="about">
+      <h2>Tentang Bot MikroTik Massal</h2>
+      <div class="about-grid">
+        <div class="about-text">
+            <style>
+              .about-text p {
+                text-align: justify;
+              }
+            </style>
+            <p>Bot Telegram ini dirancang untuk menyederhanakan proses konfigurasi massal perangkat MikroTik hanya lewat chat. Dengan dukungan file JSON, bot mampu mengatur banyak router sekaligus secara otomatis, serta menyediakan fitur pengecekan IP, serta menghapus IP secara massal. Proyek ini dibangun menggunakan Python dengan integrasi python-telegram-bot, routeros_api, dan json untuk memastikan pengelolaan jaringan yang efisien dan terstruktur serta menggunakan GNS3 untuk melakukan pengetesan secara <i>real-time</i></p>
+            <p>Bot Akan terus dikembangkan sehingga menjadi lebih efisien. Seperti fitur DHCP-Server, Firewall, Hospot, dan masih banyak lagi. Dan saya program ini akan menjadikan konfigurasi semakin mudah. Cukup satu klik pada Bot, semua router terkonfigurasi. </p>
+          </div>
+
+
+          <div class="about-card">
+            <h3><i class="fa fa-robot"></i> Fitur Bot Telegram MikroTik</h3>
+            <style>
+                .about-card p {
+                  text-align: justify;
+                }
+              </style>
+            <p><i class="fa fa-network-wired"></i> <strong>Set IP Massal:</strong></p>
+            <p>Bot dapat mengatur alamat IP ke banyak perangkat MikroTik sekaligus hanya dengan satu perintah melalui Telegram. Proses ini dilakukan berdasarkan data konfigurasi dari file JSON yang berisi detail interface, IP, dan jaringan tiap router.</p>
+          
+            <p><i class="fa fa-search-location"></i> <strong>Cek IP Massal:</strong></p>
+            <p>Bot akan menampilkan daftar alamat IP dari seluruh perangkat yang telah terkoneksi, membantu pengguna memantau konfigurasi IP secara menyeluruh.</p>
+          
+            <p><i class="fa fa-trash-alt"></i> <strong>Hapus IP Massal:</strong></p>
+            <p>Bot memungkinkan pengguna untuk menghapus alamat IP yang telah dikonfigurasi pada banyak perangkat MikroTik sekaligus, cukup dengan satu perintah. Proses ini menggunakan data yang ada dalam file JSON untuk memastikan IP yang akan dihapus sesuai dengan konfigurasi yang telah ditetapkan.</p>
+        </div>
+          
+        
+      </div>
+    </section>
+    
+    <section id="projects_MikroTik">
+      <h2>Projek MikroTik</h2>
+      <div class="projects">
+
+        <div class="project-card" style="text-align: justify">
+            <h3>
+              
+                <i class="fa fa-cogs"></i>    Otomasi MikroTik via Bot Telegram — GNS3 | Python | JSON
+              
+            </h3>
+          
+            <p><i class="fa fa-bolt"></i> <strong>Fitur :</strong> /set_ip_Massal, /cek_ip_massal, /hapus_ip_semua</p>
+            <p><i class="fa fa-code"></i> <strong>Stack:</strong> Python, Telegram Bot API, RouterOS API, JSON</p>
+            <p><i class="fa fa-calendar"></i> <strong>Tahun:</strong> 2025</p>
+            <p><i class="fa fa-info-circle"></i> Bot ini dibuat untuk mengotomasi konfigurasi banyak router MikroTik langsung dari Telegram secara efisien. Terintegrasi dengan GNS3 untuk simulasi jaringan dan file JSON untuk pengaturan massal.</p>
+          </div>
+          
+
+        <div class="project-card" style="text-align: justify">
+            <h3><i class="fa fa-project-diagram"></i> Diagram Alir Bot MikroTik</h3>
+          
+            <p>Diagram berikut menggambarkan alur komunikasi antara <strong>User → Telegram Bot → MikroTik</strong>. 
+            Setiap perintah yang dikirimkan oleh user akan diproses oleh bot, dieksekusi ke MikroTik, lalu respon dikembalikan ke user.</p>
+          
+            <div style="text-align: center; margin-top: 10px;">
+              <img src="Flowchart.drawio (1).png" alt="diagram alir" style="max-width: 80%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
+              <p style="font-size: 0.9em; color: #555;">Gambar: Flowchart proses kerja bot Telegram dan MikroTik</p>
+            </div>
+        </div>
+   
+          <div class="project-card" style="text-align: justify">
+            <h3>
+                <i class="fa fa-network-wired"></i> Topologi Jaringan
+  
+            </h3>
+            
+            <div style="text-align: center; margin-top: 10px;">
+              <img src="topologi.png" alt="diagram alir" style="max-width: 80%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
+              <p style="font-size: 0.9em; color: #555;">Gambar: Topologi Jaringan GNS3 setelah di konfiguasi Massal </p>
+            </div>
+              
+            <p>
+              <i class="fa fa-info-circle"></i> <strong>Topologi:</strong>
+              Jaringan dapat terdiiri 2 hingga lebih banyak router.
+              Konfigurasi dilakukan secara fleksibel dan massal menggunakan Bot Telegram tanpa perlu akses ke laptop atau komputer dengan catatan, daftar konfigurasi harus sudah tersedia di <code>json</code>.
+          </p>
+      
+          <p>
+              <i class="fa fa-wifi"></i> <strong>Koneksi Internet:</strong>
+              Router MikroTik mendapatkan akses internet dari WiFi melalui port <code>ether1</code> dan menyalurkan koneksi internet ke klien melalui port <code>ether2</code>.
+          </p>
+      
+          <p>
+              <i class="fa fa-tools"></i> <strong>Konfigurasi Cepat dan Lengkap:</strong>
+              Dengan memanfaatkan fitur yang tersedia saat ini di Bot Telegram, pengguna dapat konfigurasi IP secara massal hanya dengan satu kali <i>klik</i>
+          </p>
+      </div>
+        
+        <div class="custom-video-frame">
+          <h3>
+              <i class="fa fa-check-circle"></i> Video Bot Telegram MikroTik
+         </h3>
+          <p><em>Demo nyata penggunaan bot untuk konfigurasi MikroTik secara massal.</em></p>
+  
+          <div style="display: flex; justify-content: center;  height: 100%;">
+            <div style="position: relative; width: 60%; padding-bottom: 33.75%; height: 0; overflow: hidden;">
+              <iframe 
+                src="https://www.youtube.com/embed/rqswHacmWcY" 
+                title="YouTube video player"
+                frameborder="0" 
+                allowfullscreen
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+              </iframe>
+            </div>
+          </div>
+    
+        
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><i class="fa fa-envelope"></i> haviz.ori@gmail.com</p>
+      <p><i class="fa fa-phone"></i> 085272922550</p>
+      <p><i class="fa fa-map-marker-alt"></i> JL. Soebrantas Panam, Pekanbaru</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Muhammad Haviz. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

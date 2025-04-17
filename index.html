@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Muhammad Haviz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #14b8a6;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9fafb;
+      color: #333;
+    }
+
+    /* Navbar */
+    header {
+      background-color: #ffffff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 95%;
+      top: 0;
+      z-index: 1000;
+      
+    }
+
+    .left-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: bold;
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 20px;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    section {
+      padding: 6rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-image: url('wordcloud_mikrotik_100words.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 8rem 2rem 4rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Lapisan gelap agar kontras */
+  z-index: 0;
+}
+
+.hero img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transition: transform 0.3s ease;
+  border: 4px solid rgba(255, 255, 255, 0.8); /* Bingkai putih semi-transparan */
+}
+
+.hero img:hover {
+  transform: scale(1.07);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  z-index: 1;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Bayangan untuk keterbacaan */
+  animation: fadeInUp 0.8s ease;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 720px;
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.4); /* Latar transparan untuk teks */
+  border-radius: 12px;
+  color: #fefefe;
+  z-index: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  animation: fadeInUp 1s ease;
+}
+
+.btn-selengkapnya {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background-color: #0088cc;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      
+    }
+
+    .btn-selengkapnya:hover {
+      background-color: #0073b1;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    }
+
+    .btn-selengkapnya:active {
+      background-color: #005f91;
+      transform: scale(0.97);
+    }
+
+    .section-detail {
+      margin-top: 20px;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+/* Animasi */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+    .about-grid {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .about-card, .about-text {
+      flex: 1 1 300px;
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .about-card i {
+      margin-right: 10px;
+      color: var(--primary);
+    }
+
+    h1, h2 {
+      color: #111827;
+    }
+
+    .projects div {
+      margin-bottom: 2rem;
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .project-card {
+      background-color: #f9f9f9;
+      border-left: 4px solid #14b8a6;
+      padding: 15px 15px 0px 15px;
+      margin: 15px 0 8px 0;
+      border-radius: 10px;
+      font-family: 'Segoe UI', sans-serif;
+      color: #2c3e50;
+      
+    }
+
+    .project-card h3 {
+      margin: 1;
+    }
+
+    .project-card h3 a {
+      text-decoration: none;
+      color: #14b8a6;  /* Warna biru untuk judul */
+      transition: text-decoration 0.2s ease;
+      cursor: pointer;
+    }
+
+    /* Saat hover, hanya menambah garis bawah tanpa mengubah warna */
+    .project-card h3 a:hover {
+      color: #2c3e50;
+    }
+
+    /* Saat diklik, warna berubah menjadi merah */
+    .project-card h3 a:active {
+      color: #e74c3c; /* Warna merah saat klik */
+    }
+
+    .project-card p {
+      margin: 5px 0;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #f3f4f6;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        padding-top: 7rem;
+      }
+      .about-grid {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="left-header">
+      <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+      <div class="logo">My Portofolio</div>
+    </div>
+    <nav id="nav-menu">
+      <a href="#home">Beranda</a>
+      <a href="#about">Tentang</a>
+      <a href="#projects">Projek</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <img src="meee.jpg" alt="Foto Muhammad Haviz">
+      <h1>Muhammad Haviz</h1>
+      <p>Network Enthusiast &amp; Automation </p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <p><i class="fa fa-user"></i><strong>Nama:</strong> Muhammad Haviz</p>
+          <p><i class="fa fa-calendar"></i><strong>TTL:</strong> Duri, Riau – 4 Mei 2001</p>
+          <p><i class="fa fa-envelope"></i><strong>Email:</strong> haviz.ori@gmail.com</p>
+          <p><i class="fa fa-phone"></i><strong>Nomor HP:</strong> +62 852-7292-2550</p>
+          <p><i class="fa fa-map-marker-alt"></i><strong>Lokasi:</strong> JL. Soebrantas Panam, Pekanbaru</p>
+          <p><i class="fa fa-graduation-cap"></i><strong>Pendidikan:</strong> S1 Teknik Elektro, UIN SUSKA Riau</p>
+          <p>
+            <i class="fab fa-linkedin"></i>
+            <strong>LinkedIn:</strong>
+            <a href="https://www.linkedin.com/in/muhammad-haviz-4b7737319/" target="_blank">Profil LinkedIn</a>
+          </p>
+        </div>
+        <div class="about-text">
+          <style>
+            .about-text p {
+              text-align: justify;
+            }
+          </style>
+          <p>Saya adalah lulusan Teknik Elektro dengan spesialisasi Telekomunikasi dan Jaringan. Saya memiliki minat kuat dalam dunia IT, khususnya networking dan automasi jaringan. Selama kuliah, saya aktif mengembangkan berbagai proyek praktis seperti bot konfigurasi MikroTik berbasis Python yang terintegrasi dengan GNS3. Pengalaman saya mencakup instalasi FTTH, administrasi jaringan, serta troubleshooting baik secara perangkat keras maupun perangkat lunak.</p>
+          <p>Saya juga memiliki kemampuan komunikasi yang baik, mampu bekerja dalam tim, dan antusias dalam belajar teknologi baru. Visi saya adalah membangun solusi teknologi yang praktis, efisien, dan bermanfaat untuk banyak orang.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+    
+    
+        <div class="project-card">
+          <h3><i class="fa fa-cogs"></i> 
+            
+              Otomasi MikroTik via Bot Telegram — GNS3 | Python 
+            
+          </h3>
+          <p><i  class="fa fa-bolt"></i> <strong>Fitur :</strong> /set_ip, /cek_ip, /hapus_ip, /set_dhcp, /cek_dhcp, /hapus_dhcp, /set_firewall, /cek_firewall, /hapus_firewall, dan masih banyak lagi</p>
+            <p><i class="fa fa-code"></i> <strong>Stack:</strong> Python, Telegram Bot API, RouterOS API</p>
+            <p><i class="fa fa-calendar"></i> <strong>Tahun:</strong> 2025</p>
+            <p><i class="fa fa-info-circle"></i> Bot ini dibuat untuk mengotomasi konfigurasi router MikroTik langsung dari Telegram secara efisien. Terintegrasi dengan GNS3 untuk simulasi jaringan.</p>
+            
+            <div style="text-align: center; margin-top: 0px;"> <!-- <== Ukuran diubah dari 30px jadi 12px -->
+              <a href="Sub_projek_bot/Konfigurasi_bot_mikrotik.html" class="btn-selengkapnya">
+                <i class="fa-solid fa-circle-info" style="margin-right: 6px;"></i> Cek Selengkapnya
+              </a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+          <h3><i class="fa fa-cogs"></i> 
+            
+              Otomasi Massal MikroTik via Telegram — GNS3 | Python | JSON
+            
+          </h3>
+            <p><i class="fa fa-bolt"></i> <strong>Fitur :</strong> /set_ip_Massal, /cek_ip_massal, /hapus_ip_semua</p>
+            <p><i class="fa fa-code"></i> <strong>Stack:</strong> Python, Telegram Bot API, RouterOS API, JSON</p>
+            <p><i class="fa fa-calendar"></i> <strong>Tahun:</strong> 2025</p>
+            <p><i class="fa fa-info-circle"></i> Bot ini dibuat untuk mengotomasi konfigurasi banyak router MikroTik langsung dari Telegram secara efisien. Terintegrasi dengan GNS3 untuk simulasi jaringan dan file JSON untuk pengaturan massal.</p>
+            <div style="text-align: center; margin-top: 0px;">
+              <a href="Sub_Projek/Konfigurasi_mikrotik_massal.html" class="btn-selengkapnya">
+                <i class="fa-solid fa-circle-info" style="margin-right: 8px;"></i> Cek Selengkapnya
+              </a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+          <h3><i class="fa fa-project-diagram"></i> Proyek Tugas Akhir</h3>
+          <style>
+            .about-card p {
+              text-align: justify;
+            }
+          </style>
+          <p><i class="fa fa-broadcast-tower"></i> <strong>Perancangan Antena:</strong></p>
+          <p>Perangcangan menggunakan <em>CST Studio Suite 2018</em> diharapkan menghasilkan Antena RLSA yang memiliki bandwidh, koefesien refleksi, dan gain yang berkulaitas, sehingga antena ini dapat diproduksi secara massal.</p>
+          
+          <p><i class="fa fa-cogs"></i> <strong>Pabrikasi Antena:</strong></p>
+          <p>Melakukan pabrikasi antena dari hasil Simulasi. Pabrikasi dilakukan oleh vendor di malaysia.</p>
+
+          <p><i class="fa fa-desktop"></i> <strong>Pengukuran Antena:</strong></p>
+          <p>Melakukan pengukuran prototype di UTeM dengan menghitung nilai bandwidh, koefesien refleksi, dan gain antenna. Ketika antena mencapai parameter hasil yang diingkan, maka antena dapat dikembangakan lebih lanjut hingga ke pabrikasi.</p>
+          <p><i class="fa fa-calendar"></i> <strong>Tahun:</strong> 2024</p>
+          <div style="text-align: center; margin-top: 0px;">
+            <a href="projek_akhir_kuliah/projek_tugas_akhir.html" class="btn-selengkapnya">
+              <i class="fa-solid fa-circle-info" style="margin-right: 8px;"></i> Cek Selengkapnya
+            </a>
+          </div>
+  
+        </div>
+
+
+        <div class="project-card">
+          <h3><i class="fa fa-cogs"></i> 
+            
+            Proyek UTBK SMKN 1 Mandau
+            
+          </h3>
+          
+            
+            <p>
+            <i class="fa fa-info-circle"></i> <strong>Topologi:</strong>
+            Jaringan terdiri dari 3 ruangan dengan subnet yang sama. Kepala sekolah menginginkan setiap komputer dapat terkoneksi ke internet dan mengakses aplikasi utbk dengan stabil. kami kemudian merancang jaringan dengan menggunakan GNS3 dengan server utama menggunakan mikrotik. Dan menggunakn NAT agar client dapat terhubung ke firewall dan memblokir koneksi antar subnet.
+            </p>
+
+            <p>
+                <i class="fa fa-wifi"></i> <strong>Koneksi Internet:</strong>
+                Router MikroTik mendapatkan akses internet melalui port <code>ether1</code> dan menyalurkan koneksi internet ke klien melalui port <code>ether2</code>.
+            </p>
+
+            <p>
+                <i class="fa fa-tools"></i> <strong>Menggunakan Firewall Filter:</strong> menghubungkan dengan internet, tetapi melarang koneksi antar jaringan LAN.
+            </p>
+            <p><i class="fa fa-calendar"></i> <strong>Tahun:</strong> 2019</p>
+            <div style="text-align: center; margin-top: 0px;">
+              <a href="projek_utbk/projek_utbk.html" class="btn-selengkapnya">
+                <i class="fa-solid fa-circle-info" style="margin-right: 8px;"></i> Cek Selengkapnya
+              </a>
+            </div>
+        </div>
+
+        
+       
+      </div>
+    </section>
+    
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><i class="fa fa-envelope"></i> haviz.ori@gmail.com</p>
+      <p><i class="fa fa-phone"></i> 085272922550</p>
+      <p><i class="fa fa-map-marker-alt"></i> JL. Soebrantas Panam, Pekanbaru</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Muhammad Haviz. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
